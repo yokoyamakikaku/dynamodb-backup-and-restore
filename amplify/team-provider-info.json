@@ -14,6 +14,9 @@
     "categories": {
       "auth": {
         "ddbackupandrestorebe3a320a": {}
+      },
+      "api": {
+        "ddbackupandrestore": {}
       }
     }
   }
