@@ -38,7 +38,7 @@ const CreateTodo: FC = () => {
     <form onSubmit={handleSubmit(values => mutation.mutate(values))}>
       <Flex direction="column">
         <TextField label="Name" {...register("name")} />
-        <TextAreaField label="Description" {...register("name")} />
+        <TextAreaField label="Description" {...register("description")} />
         {mutation.isError && <Alert variation="error">エラー</Alert>}
         {mutation.isLoading && <Alert>作成中</Alert>}
         <Button variation="primary" type="submit">作成する</Button>

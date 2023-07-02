@@ -24,7 +24,7 @@ const ListTodos: FC = () => {
         )
       )) as GraphQLResult<ListTodosQuery>
       if (result.errors) throw result.errors
-      return result.data?.listTodos?.items as Todo[]
+      return (result.data?.listTodos?.items as Todo[]).sort((a,b) => a.createdAt < b.createdAt ? -1 : 1)
     }
   })
 
@@ -59,6 +59,7 @@ const ListTodos: FC = () => {
               <TableCell>ID</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>Descripotion</TableCell>
+              <TableCell>Created At</TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableHead>
@@ -75,6 +76,7 @@ const ListTodos: FC = () => {
                   <TableCell>{todo.id}</TableCell>
                   <TableCell>{todo.name}</TableCell>
                   <TableCell>{todo.description}</TableCell>
+                  <TableCell>{todo.createdAt}</TableCell>
                   <TableCell>
                     <Button onClick={() => mutation.mutate({ id: todo.id })}>削除する</Button>
                   </TableCell>
