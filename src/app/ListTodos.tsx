@@ -39,6 +39,9 @@ const ListTodos: FC = () => {
       )) as GraphQLResult<DeleteTodoMutation>
       if (result.errors) throw result.errors
       return result.data?.deleteTodo as Todo
+    },
+    onSuccess () {
+      query.refetch()
     }
   })
 
