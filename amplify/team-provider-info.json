@@ -1,0 +1,20 @@
+{
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ddbackupandrestore-main-185139-authRole",
+      "UnauthRoleArn": "arn:aws:iam::693825121436:role/amplify-ddbackupandrestore-main-185139-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::693825121436:role/amplify-ddbackupandrestore-main-185139-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-ddbackupandrestore-main-185139-deployment",
+      "UnauthRoleName": "amplify-ddbackupandrestore-main-185139-unauthRole",
+      "StackName": "amplify-ddbackupandrestore-main-185139",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:693825121436:stack/amplify-ddbackupandrestore-main-185139/0b812550-18be-11ee-88d1-0aecb3294435",
+      "AmplifyAppId": "dnmyterd0lh8o"
+    },
+    "categories": {
+      "auth": {
+        "ddbackupandrestorebe3a320a": {}
+      }
+    }
+  }
+}
