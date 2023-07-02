@@ -8,9 +8,11 @@ import { API, graphqlOperation, GraphQLResult } from "@aws-amplify/api"
 import * as queries from '@/graphql/queries'
 import * as mutations from '@/graphql/mutations'
 
-import { Flex, Text, View, Button, Table, TableHead, TableBody, TableRow, TableCell, Alert } from "@aws-amplify/ui-react"
+import { Flex, Text, View, Button, Table, TableHead, TableBody, TableRow, TableCell, Alert, useTheme } from "@aws-amplify/ui-react"
 
 const ListTodos: FC = () => {
+  const theme = useTheme()
+
   const query = useQuery({
     queryKey: ['todos'],
     async queryFn () {
@@ -41,8 +43,8 @@ const ListTodos: FC = () => {
   })
 
   return (
-    <Flex>
-      <View>
+    <View>
+      <View marginBlockEnd={theme.tokens.space.medium}>
         <Button>再読み込み</Button>
       </View>
       {query.isLoading && <Alert>読み込み中</Alert>}
@@ -79,7 +81,7 @@ const ListTodos: FC = () => {
           </TableBody>
         </Table>
       )}
-    </Flex>
+    </View>
   )
 }
 

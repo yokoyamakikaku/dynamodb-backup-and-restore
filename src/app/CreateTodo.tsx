@@ -8,7 +8,7 @@ import { API, graphqlOperation, GraphQLResult } from "@aws-amplify/api"
 
 import * as mutations from '@/graphql/mutations'
 import { useForm } from "react-hook-form"
-import { Alert, Button, TextAreaField, TextField, View } from "@aws-amplify/ui-react"
+import { Alert, Button, TextAreaField, TextField, Flex } from "@aws-amplify/ui-react"
 
 const CreateTodo: FC = () => {
   const { register, handleSubmit, reset } = useForm<CreateTodoInput>({
@@ -36,14 +36,14 @@ const CreateTodo: FC = () => {
 
   return (
     <form onSubmit={handleSubmit(values => mutation.mutate(values))}>
-      <View>
+      <Flex direction="column">
         <TextField label="Name" {...register("name")} />
         <TextAreaField label="Description" {...register("name")} />
         {mutation.isError && <Alert variation="error">エラー</Alert>}
         {mutation.isLoading && <Alert>作成中</Alert>}
         <Button variation="primary" type="submit">作成する</Button>
         {mutation.isSuccess && <Alert variation="success">作成しました</Alert>}
-      </View>
+      </Flex>
     </form>
   )
 }
